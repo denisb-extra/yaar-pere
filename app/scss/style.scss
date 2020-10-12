@@ -1,0 +1,170 @@
+$mw: 950px;
+$tw: 1200px;
+$lw: 1370px;
+
+@mixin border {
+	$red: random(256)-1;
+	$green: random(256)-1;
+	$blue: random(256)-1;
+ 	border: 1px solid red;
+ 	border-color: rgb($red, $green, $blue);
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	  color: $color;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Fonts */
+@font-face { 
+  	font-family: 'Assistant-Regular'; 
+  	src: url('../fonts/Assistant-Regular.ttf') format('truetype'); 
+} 
+@mixin f-r {
+	font-family: 'Assistant-Regular';
+	font-weight: normal;
+}
+
+@font-face { 
+  	font-family: 'Assistant-Light'; 
+  	src: url('../fonts/Assistant-Light.ttf') format('truetype'); 
+} 
+@mixin f-l {
+	font-family: 'Assistant-Light';
+	font-weight: normal;
+}
+
+@font-face { 
+  	font-family: 'Assistant-Bold'; 
+  	src: url('../fonts/Assistant-Bold.ttf') format('truetype'); 
+} 
+@mixin f-b {
+	font-family: 'Assistant-Bold';
+}
+
+@font-face { 
+  	font-family: 'Assistant-ExtraBold'; 
+  	src: url('../fonts/Assistant-ExtraBold.ttf') format('truetype'); 
+} 
+@mixin f-xb {
+	font-family: 'Assistant-ExtraBold';
+}
+
+@font-face { 
+  	font-family: 'Assistant-SemiBold'; 
+  	src: url('../fonts/Assistant-SemiBold.ttf') format('truetype'); 
+} 
+@mixin f-sb {
+	font-family: 'Assistant-SemiBold';
+}
+
+/* /Fonts */
+
+
+
+/* Global */
+html {
+	margin: 0 !important;
+	overflow-x: hidden;
+}
+body {
+	position: relative;
+	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+  	@include f-r;
+  	font-size: 18px;
+  	line-height: 1;
+  	@media only screen and (max-width : $mw) {
+  		padding-top: 45px;
+  	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	direction: rtl;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+ul {
+	-webkit-padding-start: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.desktop {
+	display: block;
+}
+.mobile {
+	display: none;
+}
+
+@media only screen and (max-width : $mw) {
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+}
+
+section {
+	width: 100%;
+	max-width: 1920px;
+	margin: auto;	
+	overflow: hidden;
+	position: relative;
+	padding: 70px 0;
+	&.no-padding {
+		padding: 0;
+	}
+	&.small-padding {
+		padding: 30px 0;
+	}
+	@media only screen and (max-width : $lw) {
+		padding: 60px 0;
+	}
+	@media only screen and (max-width : $tw) {
+		padding: 50px 0;
+	}
+	@media only screen and (max-width : $mw) {
+		padding: 35px 0;
+	}
+}
+
+.section-inner {
+	max-width: 1340px;
+	padding: 0 10px;
+	width: 100%;
+	margin: auto;
+	position: relative;
+}
+
+
+@import 'parts';
+@import 'index';
+@import 'inner';
