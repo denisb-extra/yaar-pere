@@ -131,9 +131,6 @@ header {
 				align-items: center;
 				justify-content: flex-end;
 				margin-left: 45px;
-				.search-button {
-					display: none;
-				}
 				.icon {
 					padding: 8px 15px;
 					cursor: pointer;
@@ -298,7 +295,9 @@ header {
 				}
 			}
 		}
+		
 	}
+
 	
 	@media only screen and (max-width : $mw) {
 		position: fixed !important;
@@ -765,6 +764,10 @@ section.products {
 			flex-shrink: 0;
 			margin-left: 70px;
 		}
+
+		.main {
+			flex-grow: 1;
+		}
 	}
 
 	.tabs {
@@ -802,6 +805,7 @@ section.products {
 	.boxes {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: stretch;
 		margin-top: 35px;
 		.box-product {
 			width: 25%;
@@ -858,7 +862,7 @@ section.logos {
 	padding: 0;
 	margin-top: -115px;
 	overflow: visible;
-	z-index: 8;
+	z-index: 38;
 
 	&.inner {
 		margin-top: 0;
@@ -1403,3 +1407,128 @@ footer {
 	}
 }
 /* --------------------- /footer ---------------------- */
+
+
+
+/* ---------------------- .search-popup ---------------------- */
+.search-popup {
+	padding-top: 130px;
+	padding-bottom: 50px;
+	background: #142231;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	left: 0;
+	z-index: 99;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 640px;
+	display: none;
+
+	.close {
+		position: absolute;
+		font-size: 25px;
+		left: 10px;
+		top: 130px;
+		color: #fff;
+		cursor: pointer;
+		z-index: 10;
+	}
+	input {
+		@include f-b;
+		font-size: 40px;
+		color: #fff;
+		@include placeholder-color(#fff);
+		background: none;
+		border: none;
+		outline: none;
+		border-bottom: 7px solid #fff;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.results {
+		margin-top: 45px;
+		@include f-r;
+		font-size: 24px;
+		color: #fff;
+		.item {
+			white-space: nowrap;
+			margin-top: 25px;
+			display: block;
+			.image, .text {
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			.image {
+				img {
+					width: 146px;
+				}
+			}
+
+			.text {
+				margin-right: 35px;
+				padding-left: 140px;
+				white-space: normal;
+				.title {
+					@include f-b;
+					font-size: 24px;
+					color: #fff;
+					text-transform: uppercase;
+					span {
+						@include f-b;
+						color: #1c1c1c;
+					}
+				}
+			}
+
+			.short {
+				@include f-r;
+				font-size: 18px;
+				color: #fff;
+				margin-top: 13px;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		padding-top: 65px;
+		position: fixed;
+		max-height: 500px;
+		.close {
+			top: 53px;
+		}
+		input {
+			font-size: 24px;
+			border-bottom: 4px solid #fff;
+		}
+		.results {
+			padding-left: 80px;
+			.item {
+				.image, .text {
+					vertical-align: middle;
+				}
+				.image {
+					img {
+						width: 80px;
+					}
+				}
+				
+
+				.text {
+					margin-right: 20px;
+					padding-left: 0;
+					.title {
+						font-size: 18px;
+					}
+				}
+
+				.short {
+					display: none;
+				}
+			}
+		}
+	}
+}
+/* --------------------- /.search-popup ---------------------- */
