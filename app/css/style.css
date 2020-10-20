@@ -1479,6 +1479,13 @@ section.pansion {
         font-size: 20px; }
       section.pansion .slider-outer .swiper-button-prev:hover, section.pansion .slider-outer .swiper-button-next:hover {
         color: #000; }
+    @media only screen and (max-width: 950px) {
+      section.pansion .slider-outer {
+        padding: 0 0px; }
+        section.pansion .slider-outer .swiper-button-prev {
+          left: 10px; }
+        section.pansion .slider-outer .swiper-button-next {
+          right: 10px; } }
   @media only screen and (max-width: 1200px) {
     section.pansion .decor {
       bottom: -150px; } }
@@ -1500,13 +1507,7 @@ section.pansion {
           section.pansion .icons .icon .image {
             height: 50px; }
           section.pansion .icons .icon .text {
-            font-size: 16px; }
-      section.pansion .slider-outer {
-        padding: 0 0px; }
-        section.pansion .slider-outer .swiper-button-prev {
-          left: 10px; }
-        section.pansion .slider-outer .swiper-button-next {
-          right: 10px; } }
+            font-size: 16px; } }
 
 /* --------------------- /Section pansion ---------------------- */
 /* ---------------------- footer ---------------------- */
@@ -2539,6 +2540,46 @@ section.pansion-inner .button {
           filter: drop-shadow(0px 5px 10px rgba(10, 17, 27, 0.25)); }
   section.pansion-inner .button:hover {
     background: #E380FF; }
+
+section.pansion-inner .slider-outer {
+  padding: 0 70px;
+  position: relative;
+  overflow: visible; }
+  section.pansion-inner .slider-outer .swiper-container {
+    padding: 20px 0;
+    -webkit-filter: drop-shadow(0px 8px 17px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0px 8px 17px rgba(0, 0, 0, 0.25)); }
+  section.pansion-inner .slider-outer .swiper-slide {
+    border-radius: 40px;
+    overflow: hidden; }
+    section.pansion-inner .slider-outer .swiper-slide img {
+      width: 100%; }
+  section.pansion-inner .slider-outer .swiper-button-prev {
+    left: 40px; }
+  section.pansion-inner .slider-outer .swiper-button-next {
+    right: 40px; }
+  section.pansion-inner .slider-outer .swiper-button-prev, section.pansion-inner .slider-outer .swiper-button-next {
+    outline: none;
+    color: #fff;
+    transition: 0.5s;
+    height: 55px;
+    width: 55px;
+    background: #82C04D;
+    border: 6px solid #fff;
+    border-radius: 100%;
+    -webkit-filter: drop-shadow(0px 5px 10px rgba(10, 17, 27, 0.25));
+            filter: drop-shadow(0px 5px 10px rgba(10, 17, 27, 0.25)); }
+    section.pansion-inner .slider-outer .swiper-button-prev:after, section.pansion-inner .slider-outer .swiper-button-next:after {
+      font-size: 20px; }
+    section.pansion-inner .slider-outer .swiper-button-prev:hover, section.pansion-inner .slider-outer .swiper-button-next:hover {
+      color: #000; }
+  @media only screen and (max-width: 950px) {
+    section.pansion-inner .slider-outer {
+      padding: 0 0px; }
+      section.pansion-inner .slider-outer .swiper-button-prev {
+        left: 10px; }
+      section.pansion-inner .slider-outer .swiper-button-next {
+        right: 10px; } }
 
 @media only screen and (max-width: 950px) {
   section.pansion-inner .parts {

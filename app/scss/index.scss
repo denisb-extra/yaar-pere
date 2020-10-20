@@ -1046,6 +1046,17 @@ section.pansion {
 				color: #000;
 			}
 		}
+
+		@media only screen and (max-width : $mw) {
+			padding: 0 0px;
+
+			.swiper-button-prev {
+				left: 10px;
+			}
+			.swiper-button-next {
+				right: 10px;
+			}
+		}
 	}
 
 	@media only screen and (max-width : $tw) {
@@ -1081,18 +1092,6 @@ section.pansion {
 				}
 			}
 		}
-
-		.slider-outer {
-			padding: 0 0px;
-
-			.swiper-button-prev {
-				left: 10px;
-			}
-			.swiper-button-next {
-				right: 10px;
-			}
-		}
-
 
 	}
 
